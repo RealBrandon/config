@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo
+echo "This script has only been tested on Debian 11 so far."
 echo "Please run this script as ROOT!!!!!!!!"
 echo "Press Ctrl+C if you want to terminate the installation process now."
 echo
