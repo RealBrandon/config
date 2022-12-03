@@ -1,2 +1,2 @@
-# random_collection
+# random
 Just some random stuff...
