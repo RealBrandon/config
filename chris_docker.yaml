@@ -13,6 +13,7 @@ services:
       - "9090:9090"
     volumes:
       - /root/docker/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+      - /root/docker/prometheus/recording_rules.yaml:/etc/prometheus/recording_rules.yaml
     command:
       - "--storage.tsdb.retention.time=20d"
       - "--config.file=/etc/prometheus/prometheus.yaml"
