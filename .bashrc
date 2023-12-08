@@ -129,13 +129,13 @@ alias cp="cp -i"
 alias rm="rm -i"
 
 # Aliases for programs
-alias python="python3"
+alias python="python3.11"
 alias trash="send2trash -v"
 alias vim="nvim"
 
 # Aliases for rename commands
-alias despace="rename 'y/ /_/'"
-alias lcase="rename 'y/A-Z/a-z/'"
+alias despace="rename -v 'y/ /_/'"
+alias lcase="rename -v 'y/A-Z/a-z/'"
 
 # Initialise Starship. ALWAYS at the end!!!
 eval "$(starship init bash)"
