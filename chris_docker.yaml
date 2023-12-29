@@ -27,4 +27,5 @@ services:
       - "3000:3000"
     volumes:
       - /root/docker/grafana/storage:/var/lib/grafana
+      - /root/docker/grafana/grafana.ini:/etc/grafana/grafana.ini
     restart: always
