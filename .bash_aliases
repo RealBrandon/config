@@ -28,6 +28,7 @@ alias rmdir="rmdir -v"
 # Aliases for programs
 alias trash="send2trash -v"
 alias vim="nvim"
+alias docker="sudo docker"
 
 # Force tmux to use 256 colors
 alias tmux="tmux -2"
