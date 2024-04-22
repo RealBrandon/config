@@ -1,5 +1,5 @@
 syntax on
-set number
+set number relativenumber
 set nowrap
 set scrolloff=8
 
