@@ -78,4 +78,5 @@ format = '[ $time ]($style)'
 
 [cmd_duration]
 style = 'fg:#a0a9cb bg:#1d2230'
-format = '[ took $duration ]($style)'
+show_milliseconds = true
+format = '[ The last command took $duration ]($style)'
