@@ -1,0 +1,20 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Include programming language bin directory in PATH
+. "$HOME/.cargo/env"
+export PATH=$PATH:/usr/local/go/bin
+
+# Initialise Starship. This must be at the end of bash initialisation process.
+eval "$(starship init bash)"

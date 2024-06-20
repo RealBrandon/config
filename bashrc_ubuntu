@@ -96,12 +96,9 @@ if ! shopt -oq posix; then
 fi
 
 # Execute VTE to enable the complete feature set of Tilix.
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
-
-. "$HOME/.cargo/env"
+# if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+#   source /etc/profile.d/vte.sh
+# fi
 
 # Initialise Starship. ALWAYS at the end!!!
 eval "$(starship init bash)"
-
