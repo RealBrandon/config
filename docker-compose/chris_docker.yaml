@@ -16,7 +16,7 @@ services:
       - /root/docker/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
       - /root/docker/prometheus/recording_rules.yaml:/etc/prometheus/recording_rules.yaml
     command:
-      - "--storage.tsdb.retention.time=20d"
+      - "--storage.tsdb.retention.time=30d"
       - "--config.file=/etc/prometheus/prometheus.yaml"
       - "--web.console.libraries=/usr/share/prometheus/console_libraries"
       - "--web.console.templates=/usr/share/prometheus/consoles"
