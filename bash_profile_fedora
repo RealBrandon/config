@@ -1,20 +1,44 @@
 # .bash_profile
 
-# Get the aliases and functions
+# Get the aliases and functions.
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-# User specific environment and startup programs
+# User specific environment for login shell only.
 
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+# Set environment variable $PATH .
+
+# Prepend $HOME/.local/bin:$HOME/bin: to $PATH if not present.
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
+
+# Append Go bin directory to $PATH .
+if ! [[ "$PATH" =~ '/usr/local/go/bin' ]]
+then
+    PATH = "$PATH:/usr/local/go/bin"
+fi
+
+# Copied from ~/.cargo/env .
+# rustup shell setup
+# affix colons on either side of $PATH to simplify matching
+case ":${PATH}:" in
+    *:"$HOME/.cargo/bin":*)
+        ;;
+    *)
+        # Prepending path in case a system-installed rustc needs to be overridden
+        PATH="$HOME/.cargo/bin:$PATH"
+        ;;
+esac
+
 export PATH
 
-# Include programming language bin directory in PATH
-. "$HOME/.cargo/env"
-export PATH=$PATH:/usr/local/go/bin
+# Set minicom startup options.
+export MINICOM='-c on'
 
-# Initialise Starship. This must be at the end of bash initialisation process.
+# Initialise programs.
+# This must be at the end of the Bash initialisation process.
+eval "$(zoxide init bash --cmd cd)"
 eval "$(starship init bash)"
