@@ -27,6 +27,7 @@ alias rmdir='rmdir -v'
 alias ln='ln -v'
 
 # Aliases for programs
+alias cd='zoxide'
 alias vim='nvim'
 alias open='xdg-open'
 alias trash='send2trash -v'
